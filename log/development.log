@@ -12817,3 +12817,230 @@ Processing by HolidaysController#index as HTML
 Completed 200 OK in 167ms (Views: 161.2ms | ActiveRecord: 2.0ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicHolidays (20191201152844)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20191201152844_create_public_holidays.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "public_holidays" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_263d87be21"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20191201152844_create_public_holidays.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_public_holidays_on_user_id" ON "public_holidays" ("user_id")[0m
+  ↳ db/migrate/20191201152844_create_public_holidays.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201152844"]]
+  ↳ bin/rails:9
+  [1m[35m (23.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/public_holidays" for ::1 at 2019-12-01 23:31:04 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by PublicHolidaysController#index as HTML
+  Rendering public_holidays/index.html.erb within layouts/application
+  [1m[36mPublicHoliday Load (0.4ms)[0m  [1m[34mSELECT "public_holidays".* FROM "public_holidays"[0m
+  ↳ app/views/public_holidays/index.html.erb:15
+  Rendered public_holidays/index.html.erb within layouts/application (4.0ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (18.9ms)
+Completed 200 OK in 285ms (Views: 266.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/public_holidays/new" for ::1 at 2019-12-01 23:31:06 +0800
+Processing by PublicHolidaysController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  Rendering public_holidays/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/public_holidays/_form.html.erb:8
+  Rendered public_holidays/_form.html.erb (12.1ms)
+  Rendered public_holidays/new.html.erb within layouts/application (15.2ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+Completed 200 OK in 151ms (Views: 105.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/public_holidays" for ::1 at 2019-12-01 23:31:13 +0800
+Processing by PublicHolidaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fFC1wQzPjG/RYjDRvaBUxl9/hRjvc0jWswmjSqJj9EIsZ56bgG70W3Wxz1KxinqVKukr33x3ijkwsr/IyvyPQ==", "public_holiday"=>{"status"=>"Closed", "user_id"=>"1"}, "commit"=>"Create Public holiday"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[36mPublicHoliday Create (40.9ms)[0m  [1m[32mINSERT INTO "public_holidays" ("status", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["status", "Closed"], ["user_id", 1], ["created_at", "2019-12-01 15:31:13.822849"], ["updated_at", "2019-12-01 15:31:13.822849"]]
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[35m (34.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+Redirected to http://localhost:3000/public_holidays/1
+Completed 302 Found in 99ms (ActiveRecord: 76.2ms)
+
+
+Started GET "/public_holidays/1" for ::1 at 2019-12-01 23:31:13 +0800
+Processing by PublicHolidaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPublicHoliday Load (0.4ms)[0m  [1m[34mSELECT  "public_holidays".* FROM "public_holidays" WHERE "public_holidays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public_holidays_controller.rb:68
+  Rendering public_holidays/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/show.html.erb:10
+  Rendered public_holidays/show.html.erb within layouts/application (3.5ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (3.8ms)
+Completed 200 OK in 111ms (Views: 105.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/public_holidays" for ::1 at 2019-12-01 23:31:15 +0800
+Processing by PublicHolidaysController#index as HTML
+  Rendering public_holidays/index.html.erb within layouts/application
+  [1m[36mPublicHoliday Load (0.4ms)[0m  [1m[34mSELECT "public_holidays".* FROM "public_holidays"[0m
+  ↳ app/views/public_holidays/index.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  Rendered public_holidays/index.html.erb within layouts/application (8.0ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (2.9ms)
+Completed 200 OK in 106ms (Views: 100.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/public_holidays/new" for ::1 at 2019-12-01 23:31:17 +0800
+Processing by PublicHolidaysController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  Rendering public_holidays/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/public_holidays/_form.html.erb:8
+  Rendered public_holidays/_form.html.erb (12.2ms)
+  Rendered public_holidays/new.html.erb within layouts/application (15.2ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 139ms (Views: 132.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/public_holidays" for ::1 at 2019-12-01 23:31:23 +0800
+Processing by PublicHolidaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ol6foicM1hmOXTdXP9VcvFxyOaeEW4U/+0AkNU73RF/rHkMPTT5T+VzOeKkz5fQFEaRjHJoXljRFTshHR1U5sw==", "public_holiday"=>{"status"=>"Open", "user_id"=>"1"}, "commit"=>"Create Public holiday"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[36mPublicHoliday Create (23.1ms)[0m  [1m[32mINSERT INTO "public_holidays" ("status", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["status", "Open"], ["user_id", 1], ["created_at", "2019-12-01 15:31:23.574636"], ["updated_at", "2019-12-01 15:31:23.574636"]]
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[35m (202.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+Redirected to http://localhost:3000/public_holidays/2
+Completed 302 Found in 272ms (ActiveRecord: 225.9ms)
+
+
+Started GET "/public_holidays/2" for ::1 at 2019-12-01 23:31:23 +0800
+Processing by PublicHolidaysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPublicHoliday Load (0.4ms)[0m  [1m[34mSELECT  "public_holidays".* FROM "public_holidays" WHERE "public_holidays"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public_holidays_controller.rb:68
+  Rendering public_holidays/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/show.html.erb:10
+  Rendered public_holidays/show.html.erb within layouts/application (5.0ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (2.7ms)
+Completed 200 OK in 112ms (Views: 101.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/public_holidays" for ::1 at 2019-12-01 23:31:25 +0800
+Processing by PublicHolidaysController#index as HTML
+  Rendering public_holidays/index.html.erb within layouts/application
+  [1m[36mPublicHoliday Load (0.4ms)[0m  [1m[34mSELECT "public_holidays".* FROM "public_holidays"[0m
+  ↳ app/views/public_holidays/index.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  Rendered public_holidays/index.html.erb within layouts/application (13.9ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (3.2ms)
+Completed 200 OK in 114ms (Views: 110.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/public_holidays/new" for ::1 at 2019-12-01 23:31:26 +0800
+Processing by PublicHolidaysController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  Rendering public_holidays/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/public_holidays/_form.html.erb:8
+  Rendered public_holidays/_form.html.erb (12.0ms)
+  Rendered public_holidays/new.html.erb within layouts/application (16.4ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+Completed 200 OK in 120ms (Views: 111.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/public_holidays" for ::1 at 2019-12-01 23:31:31 +0800
+Processing by PublicHolidaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C2RgVGDsqZp9XGW3k406U8QF6QB66Wjow1LWJzWvLRbaJLz5Ct4seq/PKkmfvZLqidOzu2Sle+N9XDpVPA1Q+g==", "public_holiday"=>{"status"=>"Unspecified", "user_id"=>"1"}, "commit"=>"Create Public holiday"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/shimolkhan/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[36mPublicHoliday Create (4.9ms)[0m  [1m[32mINSERT INTO "public_holidays" ("status", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["status", "Unspecified"], ["user_id", 1], ["created_at", "2019-12-01 15:31:31.533729"], ["updated_at", "2019-12-01 15:31:31.533729"]]
+  ↳ app/controllers/public_holidays_controller.rb:31
+  [1m[35m (133.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public_holidays_controller.rb:31
+Redirected to http://localhost:3000/public_holidays/3
+Completed 302 Found in 154ms (ActiveRecord: 139.2ms)
+
+
+Started GET "/public_holidays/3" for ::1 at 2019-12-01 23:31:31 +0800
+Processing by PublicHolidaysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPublicHoliday Load (0.3ms)[0m  [1m[34mSELECT  "public_holidays".* FROM "public_holidays" WHERE "public_holidays"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/public_holidays_controller.rb:68
+  Rendering public_holidays/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/show.html.erb:10
+  Rendered public_holidays/show.html.erb within layouts/application (3.0ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (2.6ms)
+Completed 200 OK in 127ms (Views: 121.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/public_holidays" for ::1 at 2019-12-01 23:31:32 +0800
+Processing by PublicHolidaysController#index as HTML
+  Rendering public_holidays/index.html.erb within layouts/application
+  [1m[36mPublicHoliday Load (1.3ms)[0m  [1m[34mSELECT "public_holidays".* FROM "public_holidays"[0m
+  ↳ app/views/public_holidays/index.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public_holidays/index.html.erb:18
+  Rendered public_holidays/index.html.erb within layouts/application (12.7ms)
+  Rendered shared/_alert.html.erb (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:32
+  Rendered shared/_navbar.html.erb (2.9ms)
+Completed 200 OK in 113ms (Views: 107.9ms | ActiveRecord: 2.0ms)
+
+

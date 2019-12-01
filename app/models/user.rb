@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :categories
   has_many :holidays
   has_many :stores
+  has_many :public_holidays
 end
