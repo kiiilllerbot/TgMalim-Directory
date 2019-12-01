@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-5">
+    <div class="card" style="margin-top: 10vh; padding: 25px">
+      <div class="card-body">
+        <div class="text-center mb-3">
+          <%= image_tag('brand.png',size:'60x60')%>
+        </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ 
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-envelope-open"></i></div>
+              </div>
+              <%= f.email_field :email,
+                              placeholder: 'Email',
+                              required: true,
+                              autofocus: true,
+                              class: 'form-control',
+                              input_html: { autocomplete: "email" } %>
+            </div>
+
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-key"></i></div>
+              </div>
+              <%= f.password_field :password,
+                          placeholder: 'Password',
+                          required: true,
+                          class: 'form-control',
+                          input_html: { autocomplete: "current-password" } %>
+            </div>
+
+
+
+          <div class="form-actions" style="margin-top: 10px">
+            <%= f.button "sign-in",:class=>"btn btn-md btn-success btn-block", data:{disable_with: "<i class='fa fa-spinner fa-spin'></i> Logging in ..."},:style=>"margin-left:0"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

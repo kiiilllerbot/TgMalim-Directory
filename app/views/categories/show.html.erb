@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+	<div class="col-12 text-center">
+		<div class="card mt-5" style="padding: 10px 20px">
+			<div class="card-body">
+				<h3><%= @category.name %></h3>
+				<p>Added at <%= @category.created_at.strftime("%B, %d, %Y")%></p>
+				<hr class="my-2">
+				<p class="lead">
+					<%= @category.description %>
+				</p>
+				<%= link_to categories_path do %>
+					<button class="btn btn-sm btn-primary">
+						<i class="fas fa-arrow-left"></i>
+					</button>
+				<% end %>
+				
+				<% if user_signed_in? %>
+					<%= link_to edit_category_path(@category) do %>
+						<button class="btn btn-sm btn-info">
+							<i class="fas fa-pencil-alt"></i>
+						</button>
+					<% end %>
+
+					<%= link_to categories_path, method: :delete, data:{confirm:"Are you sure?"} do %>
+						<button class="btn btn-sm btn-warning">
+							<i class="fas fa-trash"></i>
+						</button>
+					<% end %>
+
+					<%= link_to new_category_path do %>
+						<button class="btn btn-sm btn-secondary">
+							<i class="fas fa-arrow-right"></i>
+						</button>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

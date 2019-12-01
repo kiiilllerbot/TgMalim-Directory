@@ -1,0 +1,27 @@
+
+<%= simple_form_for(@store) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description ,input_html:{rows:5}%>
+    <label>Image: </label>
+    <%= f.file_field :image %>
+    <%= f.association :category %>
+    <%= f.association :place %>
+    <%= f.input :coordinates %>
+    <%= f.input :opening %>
+    <%= f.input :closing %>
+    <%= f.association :holiday %>
+    <%= f.input :contact %>
+    <%= f.association :user,as: :hidden %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit ,:class=>"btn btn-sm btn-success"%>
+    <%= link_to "Back", stores_path,:class=>"btn btn-sm btn-primary"%>
+  </div>
+<% end %>
+

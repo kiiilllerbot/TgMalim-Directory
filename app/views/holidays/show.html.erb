@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @holiday.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @holiday.user %>
+</p>
+
+<%= link_to 'Edit', edit_holiday_path(@holiday) %> |
+<%= link_to 'Back', holidays_path %>

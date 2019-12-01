@@ -1,0 +1,52 @@
+<div class="row justify-content-center mb-3">
+  <form class="form-inline md-form form-sm mt-2 mb-0">
+    <div class="form-group">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </div>
+    <div class="form-group">
+      <%= form_tag stores_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], :class=>'form-control form-control-sm ml-3 w-160', placeholder:'Search' %>
+      <% end %>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <% @stores.each do |store | %>
+  <div class="col-4">
+    <div class="card">
+      <% if store.image.attached? %>
+        <%= image_tag(store.image,:size=>"140x230",:class=>"card-img-top")%>
+      <% else %>
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap" height="230px">
+      <% end %>
+      <div class="card-body">
+        <h4 class="card-title"><%= link_to store.name, store, :class=>"link" %></h4>
+        <p class="card-text"><%= store.category.name %></p>
+        <%= link_to "Details", store, :class=>"btn btn-info btn-md"%>
+      </div>
+    </div>
+    <br>
+  </div>
+  <% end %>
+</div>
+
+<!-- Bootstrap4 Pagination + Will_Paginate + Bootstrap-will_paginate Gem -->
+<nav aria-label="Page navigation example" style="margin-top: 10px">
+  <ul class="pagination pg-blue justify-content-center">
+            <%= will_paginate(@posts,
+            :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer,
+            inner_window: 1,
+            outer_window: 0,
+            class: 'text-center') %>
+  </ul>
+</nav>
+<!-- / Pagination -->
+
+<% if user_signed_in? %>
+  <%= link_to new_store_path do %>
+    <button class="btn btn-md btn-success btn-block" style="margin-left: 0">
+      <i class="fas fa-plus"></i>
+    </button>
+  <% end %>
+<% end %>

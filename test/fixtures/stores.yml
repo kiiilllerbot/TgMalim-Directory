@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  contact: MyString
+  description: MyText
+  opening: 2019-11-29 15:52:20
+  closing: 2019-11-29 15:52:20
+  coordinates: MyString
+  category: one
+  user: one
+  holiday: one
+
+two:
+  name: MyString
+  contact: MyString
+  description: MyText
+  opening: 2019-11-29 15:52:20
+  closing: 2019-11-29 15:52:20
+  coordinates: MyString
+  category: two
+  user: two
+  holiday: two
