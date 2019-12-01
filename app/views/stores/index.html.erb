@@ -21,7 +21,7 @@
         <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap" height="230px">
       <% end %>
       <div class="card-body">
-        <h4 class="card-title"><%= link_to store.name, store, :class=>"link" %></h4>
+        <h4 class="card-title"><%= link_to truncate(store.name,:length=>20), store, :class=>"link" %></h4>
         <p class="card-text"><%= store.category.name %></p>
         <%= link_to "Details", store, :class=>"btn btn-info btn-md"%>
       </div>

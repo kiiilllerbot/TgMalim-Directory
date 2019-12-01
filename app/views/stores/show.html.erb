@@ -27,7 +27,12 @@
                 <br>
                 Category: <%= @store.category.name %>
                 <br>
+                <% if @store.contact.blank? %>
+                Contact: Not Provided
+                <% else %>
                 Contact: <%= @store.contact %>
+                <% end %>
+                
                 <br>
                 <hr class="my-1">
                 <div class="text-center">

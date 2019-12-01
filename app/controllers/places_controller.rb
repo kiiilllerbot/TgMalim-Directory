@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    @stores = @place.stores
   end
 
   # GET /places/new

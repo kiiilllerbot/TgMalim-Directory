@@ -5,7 +5,7 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all.order('created_at DESC').where(["name like ?", "%#{params[:search]}%"]).paginate(page: params[:page], per_page: 12)
+    @stores = Store.all.where(["name like ?", "%#{params[:search]}%"]).paginate(page: params[:page], per_page: 9)
   end
 
   # GET /stores/1

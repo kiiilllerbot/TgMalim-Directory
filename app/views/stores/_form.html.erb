@@ -8,12 +8,12 @@
     <%= f.input :description ,input_html:{rows:5}%>
     <label>Image: </label>
     <%= f.file_field :image %>
-    <%= f.association :category %>
-    <%= f.association :place %>
+    <%= f.association :category,prompt:"Please choose category" %>
+    <%= f.association :place,prompt:"Please choose place"%>
     <%= f.input :coordinates %>
     <%= f.input :opening %>
     <%= f.input :closing %>
-    <%= f.association :holiday %>
+    <%= f.association :holiday,prompt:"Please choose holiday" %>
     <%= f.input :contact %>
     <%= f.association :user,as: :hidden %>
     
