@@ -27,6 +27,7 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

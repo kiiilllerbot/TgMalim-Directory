@@ -1,5 +1,5 @@
 
-<div class="row justify-content-center">
+<div class="row animated bounceInUp faster justify-content-center">
   <div class="col-12">
     <div class="card" style="padding: 0px 100px">
       <div class="card-body">
@@ -32,7 +32,6 @@
                 <% else %>
                 Contact: <%= @store.contact %>
                 <% end %>
-                
                 <br>
                 <hr class="my-1">
                 <div class="text-center">
@@ -43,7 +42,7 @@
                     </button>
                   <% end %>
 
-                  <%= link_to stores_path, method: :delete, data:{confirm:"Are you sure?"} do %>
+                  <%= link_to store_path, method: :delete, data:{confirm:"Are you sure?"} do %>
                     <button class="btn btn-sm btn-warning">
                       <i class="fas fa-trash"></i>
                     </button>

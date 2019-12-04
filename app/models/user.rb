@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :holidays
   has_many :stores
   has_many :public_holidays
+
+  has_one_attached :image
 end

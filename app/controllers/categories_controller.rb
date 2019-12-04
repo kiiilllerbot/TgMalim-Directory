@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @stores = @category.stores
+     @stores = @category.stores
   end
 
   # GET /categories/new

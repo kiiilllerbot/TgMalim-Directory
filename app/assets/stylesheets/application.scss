@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import "bootstrap";
+@import "animate.scss";
 
 html,body{
     margin-top: 40px;
@@ -52,4 +52,9 @@ abbr{
     text-decoration: none;
     color: #263238;
     opacity: 1;
+}
+
+#map {
+    width: 600px;
+    height: 400px;
 }
